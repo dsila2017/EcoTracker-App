@@ -9,21 +9,47 @@
 /* Begin PBXBuildFile section */
 		63DE5E632B1766F80050A54E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E622B1766F80050A54E /* AppDelegate.swift */; };
 		63DE5E652B1766F80050A54E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E642B1766F80050A54E /* SceneDelegate.swift */; };
-		63DE5E672B1766F80050A54E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E662B1766F80050A54E /* ViewController.swift */; };
-		63DE5E6A2B1766F80050A54E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DE5E682B1766F80050A54E /* Main.storyboard */; };
+		63DE5E672B1766F80050A54E /* AirQualityPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E662B1766F80050A54E /* AirQualityPageView.swift */; };
 		63DE5E6C2B1766F90050A54E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DE5E6B2B1766F90050A54E /* Assets.xcassets */; };
 		63DE5E6F2B1766F90050A54E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DE5E6D2B1766F90050A54E /* LaunchScreen.storyboard */; };
+		63DE5E792B1775D50050A54E /* WeatherPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E782B1775D50050A54E /* WeatherPageView.swift */; };
+		63DE5E7D2B17760E0050A54E /* SpeciePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E7C2B17760E0050A54E /* SpeciePageView.swift */; };
+		63DE5E802B17765D0050A54E /* SolarResourcePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E7F2B17765D0050A54E /* SolarResourcePageView.swift */; };
+		63DE5E832B17767C0050A54E /* PopulationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E822B17767C0050A54E /* PopulationPageView.swift */; };
+		63DE5E862B1776C40050A54E /* AirQualityPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E852B1776C40050A54E /* AirQualityPageModel.swift */; };
+		63DE5E882B1776D10050A54E /* AirQualityPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E872B1776D10050A54E /* AirQualityPageViewModel.swift */; };
+		63DE5E8D2B1777250050A54E /* WeatherPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E8C2B1777250050A54E /* WeatherPageModel.swift */; };
+		63DE5E8F2B17772B0050A54E /* WeatherPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E8E2B17772B0050A54E /* WeatherPageViewModel.swift */; };
+		63DE5E912B1777340050A54E /* SpeciePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E902B1777340050A54E /* SpeciePageModel.swift */; };
+		63DE5E932B17773A0050A54E /* SpeciePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E922B17773A0050A54E /* SpeciePageViewModel.swift */; };
+		63DE5E952B17773F0050A54E /* SolarResourcePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E942B17773F0050A54E /* SolarResourcePageModel.swift */; };
+		63DE5E972B17774C0050A54E /* SolarResourcePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E962B17774C0050A54E /* SolarResourcePageViewModel.swift */; };
+		63DE5E992B1777510050A54E /* PopulationPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E982B1777510050A54E /* PopulationPageModel.swift */; };
+		63DE5E9B2B1777580050A54E /* PopulationPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E9A2B1777580050A54E /* PopulationPageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63DE5E5F2B1766F80050A54E /* EcoTracker App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EcoTracker App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DE5E622B1766F80050A54E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63DE5E642B1766F80050A54E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63DE5E662B1766F80050A54E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		63DE5E692B1766F80050A54E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63DE5E662B1766F80050A54E /* AirQualityPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageView.swift; sourceTree = "<group>"; };
 		63DE5E6B2B1766F90050A54E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63DE5E6E2B1766F90050A54E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63DE5E702B1766F90050A54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63DE5E782B1775D50050A54E /* WeatherPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPageView.swift; sourceTree = "<group>"; };
+		63DE5E7C2B17760E0050A54E /* SpeciePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePageView.swift; sourceTree = "<group>"; };
+		63DE5E7F2B17765D0050A54E /* SolarResourcePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarResourcePageView.swift; sourceTree = "<group>"; };
+		63DE5E822B17767C0050A54E /* PopulationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationPageView.swift; sourceTree = "<group>"; };
+		63DE5E852B1776C40050A54E /* AirQualityPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageModel.swift; sourceTree = "<group>"; };
+		63DE5E872B1776D10050A54E /* AirQualityPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageViewModel.swift; sourceTree = "<group>"; };
+		63DE5E8C2B1777250050A54E /* WeatherPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPageModel.swift; sourceTree = "<group>"; };
+		63DE5E8E2B17772B0050A54E /* WeatherPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPageViewModel.swift; sourceTree = "<group>"; };
+		63DE5E902B1777340050A54E /* SpeciePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePageModel.swift; sourceTree = "<group>"; };
+		63DE5E922B17773A0050A54E /* SpeciePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePageViewModel.swift; sourceTree = "<group>"; };
+		63DE5E942B17773F0050A54E /* SolarResourcePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarResourcePageModel.swift; sourceTree = "<group>"; };
+		63DE5E962B17774C0050A54E /* SolarResourcePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarResourcePageViewModel.swift; sourceTree = "<group>"; };
+		63DE5E982B1777510050A54E /* PopulationPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationPageModel.swift; sourceTree = "<group>"; };
+		63DE5E9A2B1777580050A54E /* PopulationPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationPageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +82,204 @@
 		63DE5E612B1766F80050A54E /* EcoTracker App */ = {
 			isa = PBXGroup;
 			children = (
-				63DE5E622B1766F80050A54E /* AppDelegate.swift */,
-				63DE5E642B1766F80050A54E /* SceneDelegate.swift */,
-				63DE5E662B1766F80050A54E /* ViewController.swift */,
-				63DE5E682B1766F80050A54E /* Main.storyboard */,
+				63DE5E762B1775740050A54E /* App */,
+				63DE5E7B2B1775F30050A54E /* Scenes */,
 				63DE5E6B2B1766F90050A54E /* Assets.xcassets */,
 				63DE5E6D2B1766F90050A54E /* LaunchScreen.storyboard */,
 				63DE5E702B1766F90050A54E /* Info.plist */,
 			);
 			path = "EcoTracker App";
+			sourceTree = "<group>";
+		};
+		63DE5E762B1775740050A54E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E622B1766F80050A54E /* AppDelegate.swift */,
+				63DE5E642B1766F80050A54E /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		63DE5E772B1775900050A54E /* AirQualityPage */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E8A2B1776DE0050A54E /* Model */,
+				63DE5E892B1776D50050A54E /* View */,
+				63DE5E8B2B1776E60050A54E /* ViewModel */,
+			);
+			path = AirQualityPage;
+			sourceTree = "<group>";
+		};
+		63DE5E7A2B1775E00050A54E /* WeatherPage */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E9D2B17776E0050A54E /* Model */,
+				63DE5E9C2B1777670050A54E /* View */,
+				63DE5E9E2B1777790050A54E /* ViewModel */,
+			);
+			path = WeatherPage;
+			sourceTree = "<group>";
+		};
+		63DE5E7B2B1775F30050A54E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E772B1775900050A54E /* AirQualityPage */,
+				63DE5E7A2B1775E00050A54E /* WeatherPage */,
+				63DE5E7E2B17761E0050A54E /* SpeciePage */,
+				63DE5E812B1776600050A54E /* SolarResourcePage */,
+				63DE5E842B1776800050A54E /* PopulationPage */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		63DE5E7E2B17761E0050A54E /* SpeciePage */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5EA02B1777910050A54E /* Model */,
+				63DE5E9F2B1777850050A54E /* View */,
+				63DE5EA12B1777990050A54E /* ViewModel */,
+			);
+			path = SpeciePage;
+			sourceTree = "<group>";
+		};
+		63DE5E812B1776600050A54E /* SolarResourcePage */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5EA32B1777A60050A54E /* Model */,
+				63DE5EA22B1777A00050A54E /* View */,
+				63DE5EA42B1777AB0050A54E /* ViewModel */,
+			);
+			path = SolarResourcePage;
+			sourceTree = "<group>";
+		};
+		63DE5E842B1776800050A54E /* PopulationPage */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5EA62B1777B60050A54E /* Model */,
+				63DE5EA52B1777B20050A54E /* View */,
+				63DE5EA72B1777BA0050A54E /* ViewModel */,
+			);
+			path = PopulationPage;
+			sourceTree = "<group>";
+		};
+		63DE5E892B1776D50050A54E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E662B1766F80050A54E /* AirQualityPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63DE5E8A2B1776DE0050A54E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E852B1776C40050A54E /* AirQualityPageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63DE5E8B2B1776E60050A54E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E872B1776D10050A54E /* AirQualityPageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63DE5E9C2B1777670050A54E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E782B1775D50050A54E /* WeatherPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63DE5E9D2B17776E0050A54E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E8C2B1777250050A54E /* WeatherPageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63DE5E9E2B1777790050A54E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E8E2B17772B0050A54E /* WeatherPageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63DE5E9F2B1777850050A54E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E7C2B17760E0050A54E /* SpeciePageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63DE5EA02B1777910050A54E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E902B1777340050A54E /* SpeciePageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63DE5EA12B1777990050A54E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E922B17773A0050A54E /* SpeciePageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63DE5EA22B1777A00050A54E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E7F2B17765D0050A54E /* SolarResourcePageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63DE5EA32B1777A60050A54E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E942B17773F0050A54E /* SolarResourcePageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63DE5EA42B1777AB0050A54E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E962B17774C0050A54E /* SolarResourcePageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63DE5EA52B1777B20050A54E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E822B17767C0050A54E /* PopulationPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63DE5EA62B1777B60050A54E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E982B1777510050A54E /* PopulationPageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63DE5EA72B1777BA0050A54E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5E9A2B1777580050A54E /* PopulationPageViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +342,6 @@
 			files = (
 				63DE5E6F2B1766F90050A54E /* LaunchScreen.storyboard in Resources */,
 				63DE5E6C2B1766F90050A54E /* Assets.xcassets in Resources */,
-				63DE5E6A2B1766F80050A54E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +352,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63DE5E672B1766F80050A54E /* ViewController.swift in Sources */,
+				63DE5E672B1766F80050A54E /* AirQualityPageView.swift in Sources */,
+				63DE5E882B1776D10050A54E /* AirQualityPageViewModel.swift in Sources */,
+				63DE5E792B1775D50050A54E /* WeatherPageView.swift in Sources */,
+				63DE5E912B1777340050A54E /* SpeciePageModel.swift in Sources */,
+				63DE5E8F2B17772B0050A54E /* WeatherPageViewModel.swift in Sources */,
+				63DE5E802B17765D0050A54E /* SolarResourcePageView.swift in Sources */,
+				63DE5E9B2B1777580050A54E /* PopulationPageViewModel.swift in Sources */,
+				63DE5E932B17773A0050A54E /* SpeciePageViewModel.swift in Sources */,
+				63DE5E992B1777510050A54E /* PopulationPageModel.swift in Sources */,
+				63DE5E952B17773F0050A54E /* SolarResourcePageModel.swift in Sources */,
 				63DE5E632B1766F80050A54E /* AppDelegate.swift in Sources */,
+				63DE5E8D2B1777250050A54E /* WeatherPageModel.swift in Sources */,
+				63DE5E972B17774C0050A54E /* SolarResourcePageViewModel.swift in Sources */,
+				63DE5E7D2B17760E0050A54E /* SpeciePageView.swift in Sources */,
 				63DE5E652B1766F80050A54E /* SceneDelegate.swift in Sources */,
+				63DE5E832B17767C0050A54E /* PopulationPageView.swift in Sources */,
+				63DE5E862B1776C40050A54E /* AirQualityPageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		63DE5E682B1766F80050A54E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63DE5E692B1766F80050A54E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		63DE5E6D2B1766F90050A54E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +517,6 @@
 				INFOPLIST_FILE = "EcoTracker App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +544,6 @@
 				INFOPLIST_FILE = "EcoTracker App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

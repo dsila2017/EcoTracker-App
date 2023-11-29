@@ -16,7 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = UINavigationController(rootViewController: tabBarController())
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -45,6 +49,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    //MARK: Create TabbarController
+    func tabBarController() -> UITabBarController {
+        let tabBarController = UITabBarController()
+        
+        let airQualityPageVC = AirQualityPageViewController()
+        airQualityPageVC.tabBarItem.image = UIImage(systemName: "wind")
+        
+        let weatherPageVC = WeatherPageViewController()
+        weatherPageVC.tabBarItem.image = UIImage(systemName: "cloud.sun")
+        
+        let speciePageVC = SpeciePageViewController()
+        speciePageVC.tabBarItem.image = UIImage(systemName: "house")
+        
+        let solarResourcePage = SolarResourcePageViewController()
+        solarResourcePage.tabBarItem.image = UIImage(systemName: "globe.europe.africa")
+        
+        let populationPage = PopulationPageViewController()
+        populationPage.tabBarItem.image = UIImage(systemName: "figure.2.and.child.holdinghands")
+        
+        tabBarController.tabBar.tintColor = .white
+        
+        tabBarController.setViewControllers([airQualityPageVC, weatherPageVC, speciePageVC, solarResourcePage, populationPage], animated: true)
+        
+        return tabBarController
     }
 
 
