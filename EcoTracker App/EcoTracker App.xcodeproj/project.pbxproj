@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632AF25C2B17BDFD0006F5E0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 632AF25B2B17BDFD0006F5E0 /* Kingfisher */; };
 		63DE5E632B1766F80050A54E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E622B1766F80050A54E /* AppDelegate.swift */; };
 		63DE5E652B1766F80050A54E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E642B1766F80050A54E /* SceneDelegate.swift */; };
 		63DE5E672B1766F80050A54E /* AirQualityPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E662B1766F80050A54E /* AirQualityPageView.swift */; };
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632AF25C2B17BDFD0006F5E0 /* Kingfisher in Frameworks */,
 				63E8D78C2B179B5A00E60F60 /* NetworkManagerPro in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +315,7 @@
 			name = "EcoTracker App";
 			packageProductDependencies = (
 				63E8D78B2B179B5A00E60F60 /* NetworkManagerPro */,
+				632AF25B2B17BDFD0006F5E0 /* Kingfisher */,
 			);
 			productName = "EcoTracker App";
 			productReference = 63DE5E5F2B1766F80050A54E /* EcoTracker App.app */;
@@ -344,6 +347,7 @@
 			mainGroup = 63DE5E562B1766F80050A54E;
 			packageReferences = (
 				63E8D78A2B179B5A00E60F60 /* XCRemoteSwiftPackageReference "NetworkManagerPro" */,
+				632AF25A2B17BDFD0006F5E0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 63DE5E602B1766F80050A54E /* Products */;
 			projectDirPath = "";
@@ -603,6 +607,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		632AF25A2B17BDFD0006F5E0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
 		63E8D78A2B179B5A00E60F60 /* XCRemoteSwiftPackageReference "NetworkManagerPro" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dsila2017/NetworkManagerPro";
@@ -614,6 +626,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		632AF25B2B17BDFD0006F5E0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 632AF25A2B17BDFD0006F5E0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		63E8D78B2B179B5A00E60F60 /* NetworkManagerPro */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 63E8D78A2B179B5A00E60F60 /* XCRemoteSwiftPackageReference "NetworkManagerPro" */;

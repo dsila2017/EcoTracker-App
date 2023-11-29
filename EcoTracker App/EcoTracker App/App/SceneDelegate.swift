@@ -56,21 +56,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         
         let airQualityPageVC = AirQualityPageViewController()
-        airQualityPageVC.tabBarItem.image = UIImage(systemName: "wind")
+        airQualityPageVC.tabBarItem.image = UIImage(systemName: "wind.circle.fill")
+        airQualityPageVC.tabBarItem.title = "Air"
         
         let weatherPageVC = WeatherPageViewController()
-        weatherPageVC.tabBarItem.image = UIImage(systemName: "cloud.sun")
+        weatherPageVC.tabBarItem.image = UIImage(systemName: "cloud.sun.fill")
+        weatherPageVC.tabBarItem.title = "Weather"
         
         let speciePageVC = SpeciePageViewController()
-        speciePageVC.tabBarItem.image = UIImage(systemName: "house")
+        speciePageVC.tabBarItem.image = UIImage(systemName: "pawprint.fill")
+        speciePageVC.tabBarItem.title = "Specie"
         
         let solarResourcePage = SolarResourcePageViewController()
-        solarResourcePage.tabBarItem.image = UIImage(systemName: "globe.europe.africa")
+        solarResourcePage.tabBarItem.image = UIImage(systemName: "sun.max.fill")
+        solarResourcePage.tabBarItem.title = "Solar"
         
         let populationPage = PopulationPageViewController()
-        populationPage.tabBarItem.image = UIImage(systemName: "figure.2.and.child.holdinghands")
+        populationPage.tabBarItem.image = UIImage(systemName: "figure.and.child.holdinghands")
+        populationPage.tabBarItem.title = "Population"
         
-        tabBarController.tabBar.tintColor = .white
+        UITabBar.appearance().tintColor = .white
+        UITabBar.appearance().unselectedItemTintColor = .gray
         
         tabBarController.setViewControllers([airQualityPageVC, weatherPageVC, speciePageVC, solarResourcePage, populationPage], animated: true)
         
