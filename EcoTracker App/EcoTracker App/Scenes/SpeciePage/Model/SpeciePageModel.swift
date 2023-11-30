@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct City {
+    let id: Int
+    let name: String
+}
+
+struct SpeciesInfo {
+    let name: String
+    let imageURL: String
+    let uploaderName: String
+    let wikipediaLink: String?
+}
