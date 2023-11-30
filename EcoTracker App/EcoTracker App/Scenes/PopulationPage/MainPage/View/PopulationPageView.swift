@@ -29,7 +29,7 @@ final class PopulationPageViewController: UIViewController {
         return picker
     }()
     
-    private let mainButton: UIButton = {
+    private lazy var mainButton: UIButton = {
         let button = UIButton()
         button.setTitle("   Get Population   ", for: .normal)
         button.backgroundColor = CustomColors.primary
@@ -38,8 +38,10 @@ final class PopulationPageViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
         button.tintColor = CustomColors.primary
-        button.addAction(UIAction(handler: { _ in
+        button.addAction(UIAction(handler: { [weak self] _ in
             print("Hello")
+            let vc = PopUpPageView()
+            self?.navigationController?.present(vc, animated: true)
         }), for: .touchUpInside)
         
         return button
