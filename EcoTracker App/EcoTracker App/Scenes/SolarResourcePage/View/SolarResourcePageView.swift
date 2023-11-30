@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import NetworkManagerPro
 
 class SolarResourcePageViewController: UIViewController {
-
+    
+    private let viewModel: SolarResourcePageViewModel = SolarResourcePageViewModel(networkManager: Network())
+    
     private lazy var searchField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Search by address"
@@ -41,6 +44,10 @@ class SolarResourcePageViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = CustomColors.background
         setupViews()
+        
+        viewModel.delegate = self
+        
+        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
     }
     
     private func setupTextField(_ textField: UITextField) {
@@ -72,6 +79,26 @@ class SolarResourcePageViewController: UIViewController {
             searchButton.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
+    
+    @objc private func searchButtonTapped() {
+        guard let cityName = searchField.text else { return }
+        viewModel.viewDidLoad(address: cityName)
+    }
 }
 
-
+extension SolarResourcePageViewController: SolarResourcePageViewModelDelegate {
+    func solarResourceInfoGot(_ solarInfo: Outputs) {
+        DispatchQueue.main.async {
+            let solarInfoVC = SolarResourcesAverageInfoViewController()
+            solarInfoVC.avgDniValue = solarInfo.avgDni.annual
+            solarInfoVC.avgGhiValue = solarInfo.avgGhi.annual
+            solarInfoVC.avgLatTiltValue = solarInfo.avgLatTilt.annual
+            
+            self.present(solarInfoVC, animated: true, completion: nil)
+        }
+    }
+    
+    func shoeError(_ error: Error) {
+        print("Error: \(error)")
+    }
+}
