@@ -44,7 +44,7 @@ class SolarResourcesAverageInfoViewController: UIViewController {
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
@@ -116,6 +116,30 @@ class SolarResourcesAverageInfoViewController: UIViewController {
             information: "Latitude tilt refers to the optimal angle at which solar panels should be installed to maximize energy production based on the location's latitude.",
             averageValue: avgLatTiltValue
         )
+        
+        if avgDniValue >= 5.0 && avgGhiValue >= 5.5 && avgLatTiltValue >= 5.0 {
+            displayPlaceStatus(status: "good", color: UIColor.green.withAlphaComponent(0.60))
+        } else {
+            displayPlaceStatus(status: "bad", color: UIColor.red)
+        }
+    }
+    
+    private func displayPlaceStatus(status: String, color: UIColor) {
+        let statusLabel = UILabel()
+        statusLabel.textColor = color
+        statusLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        statusLabel.numberOfLines = 0
+        statusLabel.textAlignment = .center
+        
+        if status == "good" {
+            statusLabel.text = "This is a good place for solar energy!"
+        } else {
+            statusLabel.text = "This is a bad place for solar energy!"
+            statusLabel.textColor = UIColor.red.withAlphaComponent(0.60)
+        }
+        
+        stackView.addArrangedSubview(statusLabel)
+        
     }
     
     private func setupCloseButton() {
