@@ -95,7 +95,7 @@ final class PopUpPageView: UIViewController {
     }()
     
     var population = PopulationModel(totalPopulation: [])
-    var model: PopUpPageViewModel?
+    var model: PopUpPageViewModelProtocol?
     
     var country: String?
     
@@ -155,6 +155,17 @@ final class PopUpPageView: UIViewController {
         tomorrowDateLabel.text = updateModel.totalPopulation[1].date
         tomorrowNumberLabel.text = String(updateModel.totalPopulation[1].population )
     }
+}
+
+extension PopUpPageView: PopUpPageViewModelDelegate {
+    func fetchData(population: PopulationModel) {
+        updateUI(updateModel: population)
+    }
+    
+    func showError(_ error: Error) {
+        print("Error")
+    }
+    
     
     
 }

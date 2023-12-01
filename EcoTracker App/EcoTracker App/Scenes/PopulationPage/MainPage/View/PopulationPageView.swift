@@ -122,3 +122,15 @@ extension PopulationPageViewController: UIPickerViewDelegate {
             country = pickerData.countries[row] ?? "Afghanistan"
         }
 }
+
+// MARK: - PopulationPageViewModelDelegate
+extension PopulationPageViewController: PopulationPageViewModelDelegate {
+    func fetchData(countries: CountriesModel) {
+        pickerData = countries
+        mainPicker.reloadAllComponents()
+    }
+    
+    func showError(_ error: Error) {
+        print("Error")
+    }
+}

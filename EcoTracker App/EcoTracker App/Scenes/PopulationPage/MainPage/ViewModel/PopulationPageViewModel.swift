@@ -9,13 +9,18 @@ import Foundation
 import NetworkManagerPro
 
 protocol PopulationPageViewModelDelegate: AnyObject {
-    func viewDidLoad(countries: CountriesModel)
     func fetchData(countries: CountriesModel)
+    func showError(_ error: Error)
 }
 
-class PopulationPageViewModel: PopulationPageViewModelDelegate {
+protocol PopulationPageViewModelProtocol {
+    var delegate: PopulationPageViewModelDelegate? { get set }
+    func viewDidLoad(countries: CountriesModel)
+}
+
+final class PopulationPageViewModel: PopulationPageViewModelProtocol {
     
-    weak var delegate: PopulationPageViewController?
+    weak var delegate: PopulationPageViewModelDelegate?
     
     func viewDidLoad(countries: CountriesModel) {
         fetchData(countries: countries)
@@ -27,11 +32,10 @@ class PopulationPageViewModel: PopulationPageViewModelDelegate {
             switch result {
             case .success(let success):
                 DispatchQueue.main.async {
-                    self.delegate?.pickerData = success
-                    self.delegate?.mainPicker.reloadAllComponents()
+                    self.delegate?.fetchData(countries: success)
                 }
             case .failure(let failure):
-                print(failure)
+                self.delegate?.showError(failure)
                 break
             }
         }

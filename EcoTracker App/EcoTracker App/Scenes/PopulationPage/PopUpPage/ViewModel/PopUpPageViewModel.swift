@@ -9,13 +9,18 @@ import Foundation
 import NetworkManagerPro
 
 protocol PopUpPageViewModelDelegate: AnyObject {
-    func viewDidLoad(population: PopulationModel)
     func fetchData(population: PopulationModel)
+    func showError(_ error: Error)
 }
 
-class  PopUpPageViewModel: PopUpPageViewModelDelegate {
+protocol PopUpPageViewModelProtocol {
+    var delegate: PopUpPageViewModelDelegate? { get set }
+    func viewDidLoad(population: PopulationModel)
+}
+
+final class PopUpPageViewModel: PopUpPageViewModelProtocol{
     
-    weak var delegate: PopUpPageView?
+    weak var delegate: PopUpPageViewModelDelegate?
     var country: String?
     
     init(country: String? = nil) {
@@ -32,10 +37,10 @@ class  PopUpPageViewModel: PopUpPageViewModelDelegate {
             switch result {
             case .success(let success):
                 DispatchQueue.main.async {
-                    self.delegate?.updateUI(updateModel: success)
+                    self.delegate?.fetchData(population: success)
                 }
             case .failure(let failure):
-                print(failure)
+                self.delegate?.showError(failure)
                 break
             }
         }
