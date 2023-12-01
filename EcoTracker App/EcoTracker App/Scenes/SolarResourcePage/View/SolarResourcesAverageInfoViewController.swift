@@ -13,6 +13,7 @@ class SolarResourcesAverageInfoViewController: UIViewController {
     var avgGhiValue: Double = 0.0
     var avgLatTiltValue: Double = 0.0
     
+    // MARK: - UI Components
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -32,6 +33,7 @@ class SolarResourcesAverageInfoViewController: UIViewController {
         return button
     }()
     
+    // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = CustomColors.background
@@ -52,6 +54,7 @@ class SolarResourcesAverageInfoViewController: UIViewController {
         ])
     }
     
+    // MARK: - Methods
     private func addInformationToStackView(title: String, information: String, averageValue: Double) {
         let titleLabel = UILabel()
         titleLabel.textColor = UIColor.white

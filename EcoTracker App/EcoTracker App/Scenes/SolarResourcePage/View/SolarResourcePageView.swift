@@ -12,6 +12,7 @@ class SolarResourcePageViewController: UIViewController {
     
     private let viewModel: SolarResourcePageViewModel = SolarResourcePageViewModel(networkManager: Network())
     
+    // MARK: - UI Components
     private lazy var searchField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Search by address"
@@ -46,6 +47,7 @@ class SolarResourcePageViewController: UIViewController {
         return button
     }()
     
+    // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = CustomColors.background
@@ -55,6 +57,7 @@ class SolarResourcePageViewController: UIViewController {
         
     }
     
+    // MARK: - Methods
     private func setupTextField(_ textField: UITextField) {
         if let placeholder = textField.placeholder {
             textField.attributedPlaceholder = NSAttributedString(
@@ -86,6 +89,7 @@ class SolarResourcePageViewController: UIViewController {
     }
 }
 
+// MARK: - SolarResourcePageViewModelDelegate
 extension SolarResourcePageViewController: SolarResourcePageViewModelDelegate {
     func solarResourceInfoGot(_ solarInfo: Outputs) {
         DispatchQueue.main.async {

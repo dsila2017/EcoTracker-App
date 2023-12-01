@@ -8,6 +8,7 @@
 import Foundation
 import NetworkManagerPro
 
+
 protocol SolarResourcePageViewModelDelegate: AnyObject {
     func solarResourceInfoGot(_ solarInfo: Outputs)
     func showError(_ error: Error)
