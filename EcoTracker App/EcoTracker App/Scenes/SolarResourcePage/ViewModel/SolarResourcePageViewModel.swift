@@ -10,7 +10,7 @@ import NetworkManagerPro
 
 protocol SolarResourcePageViewModelDelegate: AnyObject {
     func solarResourceInfoGot(_ solarInfo: Outputs)
-    func shoeError(_ error: Error)
+    func showError(_ error: Error)
 }
 
 final class SolarResourcePageViewModel {
@@ -38,7 +38,7 @@ final class SolarResourcePageViewModel {
             case .success(let response):
                 self?.delegate?.solarResourceInfoGot(response.outputs)
             case .failure(let error):
-                print("Error: \(error)")
+                self?.delegate?.showError(error)
             }
         }
     }

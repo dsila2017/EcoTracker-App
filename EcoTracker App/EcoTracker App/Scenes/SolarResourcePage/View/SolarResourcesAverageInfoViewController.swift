@@ -25,8 +25,10 @@ class SolarResourcesAverageInfoViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
         button.tintColor = UIColor.white
-        button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addAction(UIAction(handler: { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }), for: .touchUpInside)
         return button
     }()
     
@@ -151,9 +153,5 @@ class SolarResourcesAverageInfoViewController: UIViewController {
             closeButton.widthAnchor.constraint(equalToConstant: 44),
             closeButton.heightAnchor.constraint(equalToConstant: 44)
         ])
-    }
-    
-    @objc private func closeButtonTapped() {
-        dismiss(animated: true, completion: nil)
     }
 }

@@ -28,7 +28,7 @@ class SolarResourcePageViewController: UIViewController {
         return textField
     }()
     
-    private let searchButton: UIButton = {
+    private lazy var searchButton: UIButton = {
         let button = UIButton()
         button.setTitle("Search", for: .normal)
         button.backgroundColor = CustomColors.primary
@@ -36,6 +36,12 @@ class SolarResourcePageViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
+        button.addAction(UIAction(handler: { [weak self] _ in
+            guard var cityName = self?.searchField.text else { return }
+            
+            cityName = cityName.replacingOccurrences(of: " ", with: "%20")
+            self?.viewModel.viewDidLoad(address: cityName)
+        }), for: .touchUpInside)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         return button
     }()
@@ -47,7 +53,6 @@ class SolarResourcePageViewController: UIViewController {
         
         viewModel.delegate = self
         
-        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
     }
     
     private func setupTextField(_ textField: UITextField) {
@@ -79,13 +84,6 @@ class SolarResourcePageViewController: UIViewController {
             searchButton.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
-    
-    @objc private func searchButtonTapped() {
-        guard var cityName = searchField.text else { return }
-        
-        cityName = cityName.replacingOccurrences(of: " ", with: "%20")
-        viewModel.viewDidLoad(address: cityName)
-    }
 }
 
 extension SolarResourcePageViewController: SolarResourcePageViewModelDelegate {
@@ -100,7 +98,7 @@ extension SolarResourcePageViewController: SolarResourcePageViewModelDelegate {
         }
     }
     
-    func shoeError(_ error: Error) {
+    func showError(_ error: Error) {
         print("Error: \(error)")
     }
 }
