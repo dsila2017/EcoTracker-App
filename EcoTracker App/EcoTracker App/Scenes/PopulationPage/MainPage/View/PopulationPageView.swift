@@ -8,6 +8,7 @@ import UIKit
 
 final class PopulationPageViewController: UIViewController {
     
+    // MARK: - UI Components + Properties
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [mainTopView, bottomStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,8 +40,7 @@ final class PopulationPageViewController: UIViewController {
         button.clipsToBounds = true
         button.tintColor = CustomColors.primary
         button.addAction(UIAction(handler: { [weak self] _ in
-            print("Hello")
-            let vc = PopUpPageView()
+            let vc = PopUpPageView(country: self?.country ?? "")
             self?.navigationController?.present(vc, animated: true)
         }), for: .touchUpInside)
         
@@ -52,17 +52,19 @@ final class PopulationPageViewController: UIViewController {
     private let bottomBottomHalfView = UIView()
     
     var pickerData = CountriesModel(countries: [])
-    
     var model = PopulationPageViewModel()
     
+    var country = "Afghanistan"
+    
+    // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupView()
         setupDelegate()
         model.viewDidLoad(countries: pickerData)
     }
     
+    // MARK: - Private Methods
     private func setupDelegate() {
         model.delegate = self
     }
@@ -78,7 +80,6 @@ final class PopulationPageViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        
         mainButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -98,10 +99,9 @@ final class PopulationPageViewController: UIViewController {
             
         ])
     }
-    
-    
 }
 
+// MARK: - UIPickerViewDataSource
 extension PopulationPageViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
@@ -116,9 +116,9 @@ extension PopulationPageViewController: UIPickerViewDataSource {
     }
 }
 
-// Don't Need Yet
+// MARK: - UIPickerViewDelegate
 extension PopulationPageViewController: UIPickerViewDelegate {
-    //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    //        self.mainButton.titleLabel?.text = pickerData[row]
-    //    }
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            country = pickerData.countries[row] ?? "Afghanistan"
+        }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 final class PopUpPageView: UIViewController {
     
+    // MARK: - UI Components + Properties
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [countryLabel, topStackView, bottomStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -94,18 +95,33 @@ final class PopUpPageView: UIViewController {
     }()
     
     var population = PopulationModel(totalPopulation: [])
-    var model = PopUpPageViewModel()
+    var model: PopUpPageViewModel?
     
+    var country: String?
+    
+    // MARK: - Init
+    init(country: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.country = country
+        model = PopUpPageViewModel(country: country)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = CustomColors.background
         setupMainView()
-        model.viewDidLoad(population: population)
+        model!.viewDidLoad(population: population)
     }
     
+    // MARK: - Methods
     private func setupDelegate() {
-        model.delegate = self
+        model!.delegate = self
     }
     
     private func setupMainView() {
@@ -117,7 +133,7 @@ final class PopUpPageView: UIViewController {
     private func setupConstraints() {
         
         NSLayoutConstraint.activate([
-        
+            
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -133,11 +149,12 @@ final class PopUpPageView: UIViewController {
     }
     
     func updateUI(updateModel: PopulationModel) {
-        self.todayDateLabel.text = updateModel.totalPopulation[0].date
-        self.todayNumberLabel.text = String(updateModel.totalPopulation[0].population)
-        self.tomorrowDateLabel.text = updateModel.totalPopulation[1].date
-        self.tomorrowNumberLabel.text = String(updateModel.totalPopulation[1].population )
+        countryLabel.text = country
+        todayDateLabel.text = updateModel.totalPopulation[0].date
+        todayNumberLabel.text = String(updateModel.totalPopulation[0].population)
+        tomorrowDateLabel.text = updateModel.totalPopulation[1].date
+        tomorrowNumberLabel.text = String(updateModel.totalPopulation[1].population )
     }
-
-
+    
+    
 }

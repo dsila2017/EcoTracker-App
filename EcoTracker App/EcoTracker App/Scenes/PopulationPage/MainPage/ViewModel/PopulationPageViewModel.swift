@@ -15,7 +15,7 @@ protocol PopulationPageViewModelDelegate: AnyObject {
 
 class PopulationPageViewModel: PopulationPageViewModelDelegate {
     
-    var delegate: PopulationPageViewController?
+    weak var delegate: PopulationPageViewController?
     
     func viewDidLoad(countries: CountriesModel) {
         fetchData(countries: countries)
