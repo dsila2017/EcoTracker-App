@@ -7,27 +7,34 @@
 
 import UIKit
 
-class SpeciePageViewController: UIViewController {
+final class SpeciePageViewController: UIViewController {
     
     //MARK: - Properties
-    let cityNameTextField: UITextField = {
+    private let cityNameTextField: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(string: "Enter City Name", attributes: [NSAttributedString.Key.foregroundColor: CustomColors.gray] )
         textField.borderStyle = .roundedRect
         textField.textColor = CustomColors.white
         textField.backgroundColor = CustomColors.darkGray
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.layer.cornerRadius = 10
+        textField.clipsToBounds = true
         return textField
     }()
     
-    let fetchButton: UIButton = {
+    private let fetchButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Fetch Species Info", for: .normal)
+        button.setTitle("Search", for: .normal)
         button.backgroundColor = CustomColors.primary
         button.layer.cornerRadius = 8
+        button.clipsToBounds = true
+        button.setTitleColor(CustomColors.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    private let viewModel = SpeciePageViewModel()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -60,8 +67,27 @@ class SpeciePageViewController: UIViewController {
     
     private func addActionForButton() {
         fetchButton.addAction(UIAction(handler: { [weak self] _ in
-            let resultViewController = SpeciesResultView()
-            self?.present(resultViewController, animated: true)
+            guard let cityName = self?.cityNameTextField.text else {
+                return 
+            }
+
+            self?.viewModel.fetchCityID(for: cityName) { result in
+                switch result {
+                case .success(let fetchedCityId):
+                    DispatchQueue.main.async {
+                        self?.presentSecondView(with: fetchedCityId)
+                    }
+                case .failure(let error):
+                    // Handle error
+                    print("Error fetching city ID: \(error)")
+                }
+            }
         }), for: .touchUpInside)
+    }
+    
+    private func presentSecondView(with cityID: Int) {
+        let secondViewController = SpeciesResultView()
+        secondViewController.cityID = cityID
+        self.present(secondViewController, animated: true, completion: nil)
     }
 }
