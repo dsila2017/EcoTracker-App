@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		632AF25C2B17BDFD0006F5E0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 632AF25B2B17BDFD0006F5E0 /* Kingfisher */; };
+		632AF2722B18D9B10006F5E0 /* CountriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2712B18D9B10006F5E0 /* CountriesModel.swift */; };
+		632AF2742B18DB490006F5E0 /* PopUpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2732B18DB490006F5E0 /* PopUpPageView.swift */; };
+		632AF2792B18DB870006F5E0 /* PopUpPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2782B18DB870006F5E0 /* PopUpPageViewModel.swift */; };
 		63DE5E632B1766F80050A54E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E622B1766F80050A54E /* AppDelegate.swift */; };
 		63DE5E652B1766F80050A54E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E642B1766F80050A54E /* SceneDelegate.swift */; };
 		63DE5E672B1766F80050A54E /* AirQualityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E662B1766F80050A54E /* AirQualityPageViewController.swift */; };
@@ -35,9 +38,13 @@
 		D93F1E752B193349001952B5 /* CitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F1E742B193349001952B5 /* CitiesResponse.swift */; };
 		D93F1E772B1A4F8F001952B5 /* EcoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F1E762B1A4F8E001952B5 /* EcoButton.swift */; };
 		D93F1E792B1A502C001952B5 /* EcoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F1E782B1A502C001952B5 /* EcoTextField.swift */; };
+		CC5145BE2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5145BD2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		632AF2712B18D9B10006F5E0 /* CountriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModel.swift; sourceTree = "<group>"; };
+		632AF2732B18DB490006F5E0 /* PopUpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpPageView.swift; sourceTree = "<group>"; };
+		632AF2782B18DB870006F5E0 /* PopUpPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpPageViewModel.swift; sourceTree = "<group>"; };
 		63DE5E5F2B1766F80050A54E /* EcoTracker App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EcoTracker App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DE5E622B1766F80050A54E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63DE5E642B1766F80050A54E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 		D93F1E742B193349001952B5 /* CitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesResponse.swift; sourceTree = "<group>"; };
 		D93F1E762B1A4F8E001952B5 /* EcoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoButton.swift; sourceTree = "<group>"; };
 		D93F1E782B1A502C001952B5 /* EcoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoTextField.swift; sourceTree = "<group>"; };
+		CC5145BD2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarResourcesAverageInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		632AF2752B18DB4F0006F5E0 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				63DE5EA62B1777B60050A54E /* Model */,
+				63DE5EA52B1777B20050A54E /* View */,
+				63DE5EA72B1777BA0050A54E /* ViewModel */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		632AF2762B18DB5C0006F5E0 /* PopUpPage */ = {
+			isa = PBXGroup;
+			children = (
+				632AF2772B18DB730006F5E0 /* View */,
+				632AF27A2B18DB910006F5E0 /* ViewModel */,
+			);
+			path = PopUpPage;
+			sourceTree = "<group>";
+		};
+		632AF2772B18DB730006F5E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				632AF2732B18DB490006F5E0 /* PopUpPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		632AF27A2B18DB910006F5E0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				632AF2782B18DB870006F5E0 /* PopUpPageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		63DE5E562B1766F80050A54E = {
 			isa = PBXGroup;
 			children = (
@@ -174,9 +217,8 @@
 		63DE5E842B1776800050A54E /* PopulationPage */ = {
 			isa = PBXGroup;
 			children = (
-				63DE5EA62B1777B60050A54E /* Model */,
-				63DE5EA52B1777B20050A54E /* View */,
-				63DE5EA72B1777BA0050A54E /* ViewModel */,
+				632AF2752B18DB4F0006F5E0 /* MainPage */,
+				632AF2762B18DB5C0006F5E0 /* PopUpPage */,
 			);
 			path = PopulationPage;
 			sourceTree = "<group>";
@@ -262,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				63DE5E7F2B17765D0050A54E /* SolarResourcePageView.swift */,
+				CC5145BD2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				63DE5E982B1777510050A54E /* PopulationPageModel.swift */,
+				632AF2712B18D9B10006F5E0 /* CountriesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,12 +446,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				63DE5E672B1766F80050A54E /* AirQualityPageViewController.swift in Sources */,
+				CC5145BE2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift in Sources */,
+				63DE5E672B1766F80050A54E /* AirQualityPageView.swift in Sources */,
 				63DE5E882B1776D10050A54E /* AirQualityPageViewModel.swift in Sources */,
 				D93F1E772B1A4F8F001952B5 /* EcoButton.swift in Sources */,
 				63DE5E792B1775D50050A54E /* WeatherPageView.swift in Sources */,
 				63DE5E912B1777340050A54E /* SpeciePageModel.swift in Sources */,
 				63E8D78E2B179C0E00E60F60 /* UIColor Extension.swift in Sources */,
 				63DE5E8F2B17772B0050A54E /* WeatherPageViewModel.swift in Sources */,
+				632AF2742B18DB490006F5E0 /* PopUpPageView.swift in Sources */,
 				63DE5E802B17765D0050A54E /* SolarResourcePageView.swift in Sources */,
 				D93F1E752B193349001952B5 /* CitiesResponse.swift in Sources */,
 				D93F1E712B1924FD001952B5 /* PickerViewController.swift in Sources */,
@@ -415,7 +462,9 @@
 				63DE5E932B17773A0050A54E /* SpeciePageViewModel.swift in Sources */,
 				63DE5E992B1777510050A54E /* PopulationPageModel.swift in Sources */,
 				D93F1E792B1A502C001952B5 /* EcoTextField.swift in Sources */,
+				632AF2722B18D9B10006F5E0 /* CountriesModel.swift in Sources */,
 				63DE5E952B17773F0050A54E /* SolarResourcePageModel.swift in Sources */,
+				632AF2792B18DB870006F5E0 /* PopUpPageViewModel.swift in Sources */,
 				63DE5E632B1766F80050A54E /* AppDelegate.swift in Sources */,
 				D93F1E732B1930AC001952B5 /* StatesModels.swift in Sources */,
 				63DE5E8D2B1777250050A54E /* WeatherPageModel.swift in Sources */,
@@ -575,6 +624,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,6 +652,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
