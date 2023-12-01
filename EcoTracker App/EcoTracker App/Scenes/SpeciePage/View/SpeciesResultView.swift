@@ -8,8 +8,7 @@
 import UIKit
 
 final class SpeciesResultView: UIViewController {
-
-    var cityID: Int = 0
+    var city: City?
     
     private var tableView: UITableView = {
         let tableView = UITableView()
@@ -22,24 +21,29 @@ final class SpeciesResultView: UIViewController {
     private var viewModel = SpeciesResultsViewModel()
     private var species = [SpeciesInfo]()
     
+    //MARK: - Init
+    init(city: City?) {
+        super.init(nibName: nil, bundle: nil)
+        self.city = city
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = CustomColors.background
+        viewModel.delegate = self
         setupTableView()
         fetchData()
     }
     
     private func fetchData(){
-        viewModel.fetchSpeciesInfo(for: cityID) { [weak self] result in
-            switch result {
-            case .success(let species):
-                self?.species = species
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            case .failure(let error):
-                print("Error fetching species info: \(error)")
-            }
+        if let cityID = city?.id {
+            viewModel.viewDidLoad(for: cityID)
         }
     }
     
@@ -56,6 +60,7 @@ final class SpeciesResultView: UIViewController {
 
 }
 
+//MARK: - TableView DataSource
 extension SpeciesResultView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         species.count
@@ -70,4 +75,18 @@ extension SpeciesResultView: UITableViewDataSource {
     }
 }
 
-
+//MARK: - ViewModel Delegate
+extension SpeciesResultView: SpeciesResultViewDelegate {
+    func speciesFetched(_ species: [SpeciesInfo]) {
+        self.species = species
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
+    }
+    
+    func showError(_ error: Error) {
+        print("error")
+    }
+    
+    
+}

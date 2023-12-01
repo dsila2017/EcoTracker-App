@@ -39,12 +39,13 @@ final class SpeciesTableViewCell: UITableViewCell {
         return label
     }()
     
-    private var wikipediaLinkLabel: UILabel {
+    private var wikipediaLinkLabel: UILabel = {
         let label = UILabel()
         label.textColor = CustomColors.white
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 17)
         return label
-    }
+    }()
 
     private lazy var textStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameTitleLabel, publisherLabel, wikipediaLinkLabel])
@@ -97,9 +98,7 @@ final class SpeciesTableViewCell: UITableViewCell {
         specieImageView.kf.setImage(with: url)
         nameTitleLabel.text = specie.taxon.name
         publisherLabel.text = specie.taxon.defaultPhoto.attribution
-        if let wikiLink = specie.taxon.wikipediaURL {
-            wikipediaLinkLabel.text = wikiLink
-        }
+        wikipediaLinkLabel.text = specie.taxon.wikipediaURL
     }
 }
 

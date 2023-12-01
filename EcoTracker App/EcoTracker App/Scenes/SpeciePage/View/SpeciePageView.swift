@@ -39,6 +39,8 @@ final class SpeciePageViewController: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        
         setupUI()
     }
 
@@ -55,13 +57,13 @@ final class SpeciePageViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             cityNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            cityNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            cityNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            cityNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            cityNameTextField.widthAnchor.constraint(equalToConstant: 320),
             
             fetchButton.topAnchor.constraint(equalTo: cityNameTextField.bottomAnchor, constant: 20),
-            fetchButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            fetchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            fetchButton.heightAnchor.constraint(equalToConstant: 50),
+            fetchButton.leadingAnchor.constraint(equalTo: cityNameTextField.leadingAnchor),
+            fetchButton.widthAnchor.constraint(equalToConstant: 320),
+            fetchButton.heightAnchor.constraint(equalToConstant: 56),
         ])
     }
     
@@ -70,24 +72,21 @@ final class SpeciePageViewController: UIViewController {
             guard let cityName = self?.cityNameTextField.text else {
                 return 
             }
-
-            self?.viewModel.fetchCityID(for: cityName) { result in
-                switch result {
-                case .success(let fetchedCityId):
-                    DispatchQueue.main.async {
-                        self?.presentSecondView(with: fetchedCityId)
-                    }
-                case .failure(let error):
-                    // Handle error
-                    print("Error fetching city ID: \(error)")
-                }
-            }
+            self?.viewModel.buttonTapped(for: cityName)
         }), for: .touchUpInside)
     }
+}
+
+//MARK: - SpeciePageViewModel Delegate
+extension SpeciePageViewController: SpeciePageViewModelDelegate {
+    func cityFetched(_ city: City) {
+        DispatchQueue.main.async{
+            self.present(SpeciesResultView(city: city), animated: true, completion: nil)
+        }
+    }
     
-    private func presentSecondView(with cityID: Int) {
-        let secondViewController = SpeciesResultView()
-        secondViewController.cityID = cityID
-        self.present(secondViewController, animated: true, completion: nil)
+    func showError(_ error: Error) {
+        print(error)
     }
 }
+
