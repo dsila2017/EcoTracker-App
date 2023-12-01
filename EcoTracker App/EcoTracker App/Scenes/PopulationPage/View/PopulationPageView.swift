@@ -1,13 +1,12 @@
 //
-//  SpeciePage.swift
+//  PopulationPage.swift
 //  EcoTracker App
 //
 //  Created by David on 11/29/23.
 //
-
 import UIKit
 
-class SpeciePageViewController: UIViewController {
+class PopulationPageViewController: UIViewController {
 
     override func viewDidLoad() {
          super.viewDidLoad()

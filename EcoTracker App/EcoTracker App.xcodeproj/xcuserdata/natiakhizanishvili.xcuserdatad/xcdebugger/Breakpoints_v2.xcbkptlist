@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D4DA4987-6EAA-4E2C-9D25-2447BEAFB064"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A46F7EB8-DB0A-4DB1-83C7-E8348A77ED44"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/EcoTracker_App-epqsszhezbqwgvdauvwdonsgdahj/SourcePackages/checkouts/NetworkManagerPro/Sources/NetworkManagerPro/Network.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "request(with:handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E88D030A-4E71-481B-A8DE-108B916B14FD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoTracker App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "fetchCountries()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E88D030A-4E71-481B-A8DE-108B916B14FD - 5c0c607acc41d682"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;EcoTracker_App.CountriesResponse, Swift.Error&gt;) -&gt; () in EcoTracker_App.AirQualityPageViewModel.fetchCountries() -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natiakhizanishvili/Programming/GitHub/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "1330">
+               </Location>
+               <Location
+                  uuid = "E88D030A-4E71-481B-A8DE-108B916B14FD - 5c0c607acc41d6c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;EcoTracker_App.CountriesResponse, Swift.Error&gt;) -&gt; () in EcoTracker_App.AirQualityPageViewModel.fetchCountries() -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natiakhizanishvili/Programming/GitHub/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "1183">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14C57BF6-A23E-4068-A5C4-68A7A64A3958"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/EcoTracker_App-epqsszhezbqwgvdauvwdonsgdahj/SourcePackages/checkouts/NetworkManagerPro/Sources/NetworkManagerPro/Network.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "request(with:handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FA427E8-FBB0-4B9A-AF2A-83BCB1961C07"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoTracker App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "fetchCities(in:state:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9FA427E8-FBB0-4B9A-AF2A-83BCB1961C07 - 279f561a593fa020"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;EcoTracker_App.CitiesResponse, Swift.Error&gt;) -&gt; () in EcoTracker_App.AirQualityPageViewModel.fetchCities(in: Swift.String, state: Swift.String) -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natiakhizanishvili/Programming/GitHub/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "1254">
+               </Location>
+               <Location
+                  uuid = "9FA427E8-FBB0-4B9A-AF2A-83BCB1961C07 - 279f561a593fa1e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;EcoTracker_App.CitiesResponse, Swift.Error&gt;) -&gt; () in EcoTracker_App.AirQualityPageViewModel.fetchCities(in: Swift.String, state: Swift.String) -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natiakhizanishvili/Programming/GitHub/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "1107">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87A7B616-4340-4B1D-A410-5DC261E4D1B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoTracker App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "fetchCities(in:state:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E53252B-225B-4D36-82F2-AA179EAAC44C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoTracker App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "fetchCities(in:state:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0E53252B-225B-4D36-82F2-AA179EAAC44C - 75f0242797b4b9a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoTracker_App.AirQualityPageViewModel.fetchCities(in: Swift.String, state: Swift.String) -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natiakhizanishvili/Programming/GitHub/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "1350">
+               </Location>
+               <Location
+                  uuid = "0E53252B-225B-4D36-82F2-AA179EAAC44C - 279f561a593fa109"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;EcoTracker_App.CitiesResponse, Swift.Error&gt;) -&gt; () in EcoTracker_App.AirQualityPageViewModel.fetchCities(in: Swift.String, state: Swift.String) -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natiakhizanishvili/Programming/GitHub/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/AirQualityPage/ViewModel/AirQualityPageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "327">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A05A8408-190E-4E41-8BA9-61E3A787EC73"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoTracker App/Scenes/AirQualityPage/View/AirQualityPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "textFieldShouldBeginEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
