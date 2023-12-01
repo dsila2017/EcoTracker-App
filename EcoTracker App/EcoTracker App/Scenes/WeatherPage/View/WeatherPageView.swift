@@ -7,8 +7,13 @@
 
 import UIKit
 
-class WeatherPageViewController: UIViewController {
+final class WeatherPageViewController: UIViewController {
 
+    // MARK: - Properties
+    
+    
+    
+    // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
