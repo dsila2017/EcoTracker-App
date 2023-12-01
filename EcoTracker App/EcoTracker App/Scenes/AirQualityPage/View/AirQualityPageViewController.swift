@@ -1,0 +1,275 @@
+//
+//  AirQualityPageViewController.swift
+//  EcoTracker App
+//
+//  Created by David on 11/29/23.
+//
+
+import Kingfisher
+import UIKit
+import MapKit
+
+class AirQualityPageViewController: UIViewController {
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    private let mainStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private lazy var cityTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Choose City"
+        textField.borderStyle = .roundedRect
+        textField.delegate = self
+        textField.backgroundColor = .darkGray
+//        textField.tintColor = .white
+        textField.textColor = .white
+        return textField
+    }()
+    
+    private lazy var stateTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Choose State"
+        textField.borderStyle = .roundedRect
+        textField.delegate = self
+        textField.backgroundColor = .darkGray
+//        textField.tintColor = .white
+        textField.textColor = .white
+        return textField
+    }()
+    
+    private lazy var countryTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Choose Country"
+        textField.borderStyle = .roundedRect
+        textField.delegate = self
+        textField.backgroundColor = .darkGray
+//        textField.tintColor = .white
+        textField.textColor = .white
+//        textField.addGestureRecognizer(
+//            UITapGestureRecognizer(
+//                target: self,
+//                action: #selector(countryTextFieldDidTap)
+//            )
+//        )
+        
+        return textField
+    }()
+    
+//    @objc private func countryTextFieldDidTap() {
+//        viewModel.fetchCountries()
+//    }
+    
+    
+    private lazy var fetchDataButton: UIButton = {
+        let button = UIButton(configuration: .filled())
+        button.setTitle("Fetch Data", for: .normal)
+        button.addTarget(self, action: #selector(fetchDataButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private let mapView: MKMapView = {
+        let mapView = MKMapView()
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.layer.cornerRadius = 12
+        return mapView
+    }()
+    
+    private let airQualityLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .primary
+        return label
+    }()
+    
+    private let imageView = UIImageView()
+    
+    private lazy var viewModel = AirQualityPageViewModel(viewController: self)
+    
+    private var selectedCountry: String?
+    private var selectedState: String?
+    private var selectedCity: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = .background
+        
+        view.addSubview(scrollView)
+        scrollView.addSubview(mainStackView)
+        
+        mainStackView.addArrangedSubview(countryTextField)
+        mainStackView.addArrangedSubview(stateTextField)
+        mainStackView.addArrangedSubview(cityTextField)
+        
+        mainStackView.addArrangedSubview(fetchDataButton)
+        mainStackView.addArrangedSubview(mapView)
+        
+        mainStackView.addArrangedSubview(imageView)
+        mainStackView.addArrangedSubview(airQualityLabel)
+        
+        
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            mainStackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
+            mainStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            mainStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+            mainStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16),
+            mainStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32),
+            
+            mapView.heightAnchor.constraint(equalToConstant: 200),
+        ])
+    }
+    
+    
+    @objc private func fetchDataButtonTapped() {
+        guard let city = cityTextField.text, !city.isEmpty,
+              let state = stateTextField.text, !state.isEmpty,
+              let country = countryTextField.text, !country.isEmpty
+        else {
+            handleError(with: "All fields should be non-empty")
+            return
+        }
+        
+        viewModel.fetchCityData(for: city, state: state, country: country)
+    }
+    
+    func updateCountries(_ countries: [String]) {
+        let viewController = PickerViewController(countries, for: .country)
+        viewController.delegate = self
+        present(viewController, animated: true)
+    }
+    
+    func updateStates(_ states: [String]) {
+        let viewController = PickerViewController(states, for: .state)
+        viewController.delegate = self
+        present(viewController, animated: true)
+    }
+    
+    func updateCities(_ cities: [String]) {
+        let viewController = PickerViewController(cities, for: .city)
+        viewController.delegate = self
+        present(viewController, animated: true)
+    }
+    
+    func updateImage(url urlString: String) {
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let resource = ImageResource(downloadURL: url)
+
+        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
+            switch result {
+            case .success(let value):
+                let image = value.image.withRenderingMode(.alwaysOriginal)
+                self.imageView.image = image
+            case .failure(let error):
+                self.handleError(with: "Error: \(error)")
+            }
+        }
+    }
+
+    
+    func showModel(_ model: AirVisualResponse) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.cityTextField.text = model.data.city
+            self.stateTextField.text = model.data.state
+            self.countryTextField.text = model.data.country
+            
+            let airQualityText = """
+      Weather: \(model.data.current.weather.ic)
+      Temperature: \(model.data.current.weather.tp) °C
+      Humidity: \(model.data.current.weather.hu)%
+      Wind Speed: \(model.data.current.weather.ws) m/s
+      Air Quality Index (US): \(model.data.current.pollution.aqius)
+      Air Quality Index (China): \(model.data.current.pollution.aqicn)
+"""
+            self.airQualityLabel.text = airQualityText
+            
+            let coordinates = CLLocationCoordinate2D(
+                latitude: model.data.location.coordinates[1],
+                longitude: model.data.location.coordinates[0]
+            )
+            let region = MKCoordinateRegion(
+                center: coordinates,
+                latitudinalMeters: 35000,
+                longitudinalMeters: 35000
+            )
+            self.mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    func handleError(with message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let viewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        viewController.addAction(UIAlertAction(title: "Okay", style: .default))
+        present(viewController, animated: true)
+    }
+}
+
+extension AirQualityPageViewController: PickerDelegate {
+    func didSelect(to item: String, for type: PickerType) {
+        switch type {
+        case .country:
+            countryTextField.text = item
+            stateTextField.text = ""
+            cityTextField.text = ""
+        case .state:
+            stateTextField.text = item
+            cityTextField.text = ""
+        case .city:
+            cityTextField.text = item
+        }
+    }
+}
+
+extension AirQualityPageViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        switch textField {
+        case countryTextField:
+            viewModel.fetchCountries()
+        case stateTextField:
+            guard let country = countryTextField.text, !country.isEmpty else {
+                handleError(with: "Please choose country first")
+                return false
+            }
+            
+            viewModel.fetchStates(in: country)
+        case cityTextField:
+            guard let country = countryTextField.text, !country.isEmpty,
+                  let state = stateTextField.text, !state.isEmpty
+            else {
+                handleError(with: "Please choose country and state first")
+                return false
+            }
+            
+            viewModel.fetchCities(in: country, state: state)
+        default:
+            break
+        }
+        
+        return false
+    }
+}
