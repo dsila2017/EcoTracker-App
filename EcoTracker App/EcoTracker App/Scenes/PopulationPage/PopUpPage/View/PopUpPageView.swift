@@ -11,7 +11,7 @@ final class PopUpPageView: UIViewController {
     
     // MARK: - UI Components + Properties
     private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [countryLabel, topStackView, bottomStackView])
+        let stackView = UIStackView(arrangedSubviews: [countryLabel, topStackView, bottomStackView, dummyView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         return stackView
@@ -94,6 +94,8 @@ final class PopUpPageView: UIViewController {
         return label
     }()
     
+    private let dummyView = UIView()
+    
     var population = PopulationModel(totalPopulation: [])
     var model: PopUpPageViewModelProtocol?
     
@@ -140,9 +142,8 @@ final class PopUpPageView: UIViewController {
             mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
             countryLabel.heightAnchor.constraint(equalTo: mainStackView.heightAnchor, multiplier: 0.1),
-            topStackView.heightAnchor.constraint(equalTo: mainStackView.heightAnchor, multiplier: 0.45),
-            bottomStackView.heightAnchor.constraint(equalTo: mainStackView.heightAnchor, multiplier: 0.45),
-            
+            topStackView.heightAnchor.constraint(equalTo: mainStackView.heightAnchor, multiplier: 0.3),
+            bottomStackView.heightAnchor.constraint(equalTo: mainStackView.heightAnchor, multiplier: 0.3),
             
         ])
         
@@ -165,7 +166,4 @@ extension PopUpPageView: PopUpPageViewModelDelegate {
     func showError(_ error: Error) {
         print("Error")
     }
-    
-    
-    
 }

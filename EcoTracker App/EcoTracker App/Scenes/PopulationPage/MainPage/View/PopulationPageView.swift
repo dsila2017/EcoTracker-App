@@ -96,6 +96,8 @@ final class PopulationPageViewController: UIViewController {
             
             mainButton.centerXAnchor.constraint(equalTo: bottomBottomHalfView.centerXAnchor),
             mainButton.centerYAnchor.constraint(equalTo: bottomBottomHalfView.centerYAnchor),
+            mainButton.heightAnchor.constraint(equalToConstant: 56),
+            mainButton.widthAnchor.constraint(equalToConstant: 320)
             
         ])
     }
@@ -131,6 +133,6 @@ extension PopulationPageViewController: PopulationPageViewModelDelegate {
     }
     
     func showError(_ error: Error) {
-        print("Error")
+        print(error)
     }
 }
