@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetworkManagerPro
 
 final class WeatherPageViewController: UIViewController {
 
@@ -82,11 +83,15 @@ final class WeatherPageViewController: UIViewController {
         return button
     }()
     
+    private let viewModel = WeatherPageViewModel(networkManager: Network())
+    
     
     // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        addButtonActions()
+        viewModel.delegate = self
     }
     
     
@@ -119,6 +124,20 @@ final class WeatherPageViewController: UIViewController {
         coordinatesEntryStackView.addArrangedSubview(lonTextField)
     }
     
+    private func addButtonActions() {
+        searchButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let lat = Double(self?.latTextField.text ?? ""),
+                  let lon = Double(self?.lonTextField.text ?? "") else {
+                self?.lonTextField.text = ""
+                self?.latTextField.text = ""
+                return
+            }
+            
+            self?.viewModel.getWeatherByCoordinates(lat: lat, lon: lon)
+            
+        }), for: .touchUpInside)
+    }
+    
 
     // MARK: - Constraints
     private func setMainStackViewConstraints() {
@@ -127,5 +146,21 @@ final class WeatherPageViewController: UIViewController {
             mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
+    }
+}
+
+
+// MARK: - WeatherPageViewModelDelegate
+extension WeatherPageViewController: WeatherPageViewModelDelegate {
+    func weatherDataResponseReceived(_ weatherData: WeatherForecastResponseModel) {
+        DispatchQueue.main.async {
+            let weatherDetailsVC = WeatherDetailsViewController()
+            weatherDetailsVC.setupWeatherData(for: weatherData)
+            self.present(weatherDetailsVC, animated: true)
+        }
+    }
+    
+    func showError(_ error: Error) {
+        print("Error: \(error)")
     }
 }

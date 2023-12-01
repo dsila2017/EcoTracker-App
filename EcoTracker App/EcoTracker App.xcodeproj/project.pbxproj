@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32E1062E2B1A0EF000B63A34 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E1062D2B1A0EF000B63A34 /* WeatherDetailsViewController.swift */; };
 		632AF25C2B17BDFD0006F5E0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 632AF25B2B17BDFD0006F5E0 /* Kingfisher */; };
 		63DE5E632B1766F80050A54E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E622B1766F80050A54E /* AppDelegate.swift */; };
 		63DE5E652B1766F80050A54E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E642B1766F80050A54E /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32E1062D2B1A0EF000B63A34 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		63DE5E5F2B1766F80050A54E /* EcoTracker App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EcoTracker App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DE5E622B1766F80050A54E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63DE5E642B1766F80050A54E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				63DE5E782B1775D50050A54E /* WeatherPageView.swift */,
+				32E1062D2B1A0EF000B63A34 /* WeatherDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				63E8D78E2B179C0E00E60F60 /* UIColor Extension.swift in Sources */,
 				63DE5E8F2B17772B0050A54E /* WeatherPageViewModel.swift in Sources */,
 				63DE5E802B17765D0050A54E /* SolarResourcePageView.swift in Sources */,
+				32E1062E2B1A0EF000B63A34 /* WeatherDetailsViewController.swift in Sources */,
 				63DE5E9B2B1777580050A54E /* PopulationPageViewModel.swift in Sources */,
 				63DE5E932B17773A0050A54E /* SpeciePageViewModel.swift in Sources */,
 				63DE5E992B1777510050A54E /* PopulationPageModel.swift in Sources */,
