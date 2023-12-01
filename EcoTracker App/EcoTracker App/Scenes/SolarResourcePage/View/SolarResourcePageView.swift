@@ -69,7 +69,7 @@ class SolarResourcePageViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             searchField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            searchField.topAnchor.constraint(equalTo: view.topAnchor, constant: 180),
+            searchField.topAnchor.constraint(equalTo: view.topAnchor, constant: 140),
             searchField.widthAnchor.constraint(equalToConstant: 320),
             searchField.heightAnchor.constraint(equalToConstant: 44),
             
@@ -81,7 +81,8 @@ class SolarResourcePageViewController: UIViewController {
     }
     
     @objc private func searchButtonTapped() {
-        guard let cityName = searchField.text else { return }
+        guard var cityName = searchField.text else { return }
+        cityName = cityName.replacingOccurrences(of: " ", with: "%20")
         viewModel.viewDidLoad(address: cityName)
     }
 }
