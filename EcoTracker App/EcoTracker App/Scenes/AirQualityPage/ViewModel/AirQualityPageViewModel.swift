@@ -8,23 +8,35 @@
 import Foundation
 import NetworkManagerPro
 
+// MARK: - Delegate
+protocol AirQualityPageViewModelDelegate: AnyObject {
+    func updateCountries(_ countries: [String])
+    func updateStates(_ states: [String])
+    func updateCities(_ cities: [String])
+    func updateImage(url urlString: String)
+    func showModel(_ model: AirVisualResponse)
+    func handleError(with message: String)
+}
+
 final class AirQualityPageViewModel {
     
+    // MARK: - Properties
     private let apiKey = "8167adb3-b95b-445e-b206-6e3b32f15db1"
     private let baseURL = "https://api.airvisual.com/v2/"
     
     private let network: NetworkService = Network()
     
-    private weak var viewController: AirQualityPageViewController?
+    weak var delegate: AirQualityPageViewController?
     
     private var fetchedCountries: [String]?
     
-    init(viewController: AirQualityPageViewController) {
-        self.viewController = viewController
+    init(delegate: AirQualityPageViewController) {
+        self.delegate = delegate
     }
     
     func fetchCityData(for city: String, state: String, country: String) {
         let endpoint = "city"
+        
         guard var components = URLComponents(string: baseURL + endpoint) else {
             handleError(with: "URL is wrong")
             return
@@ -40,14 +52,13 @@ final class AirQualityPageViewModel {
         guard let url = components.url else { return }
         
         network.request(with: url) { (result: Result<AirVisualResponse, Error>) in
-            print("Did finish")
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
-                    self.viewController?.showModel(response)
+                    self.delegate?.showModel(response)
                     let iconName = response.data.current.weather.ic
                     let iconURL = "https://airvisual.com/images/" + iconName + ".png"
-                    self.viewController?.updateImage(url: iconURL)
+                    self.delegate?.updateImage(url: iconURL)
                 }
             case .failure(let error):
                 self.handleError(with: error.localizedDescription)
@@ -57,13 +68,13 @@ final class AirQualityPageViewModel {
     
     private func handleError(with message: String) {
         DispatchQueue.main.async {
-            self.viewController?.handleError(with: message)
+            self.delegate?.handleError(with: message)
         }
     }
     
     func fetchCountries() {
         if let fetchedCountries {
-            viewController?.updateCountries(fetchedCountries)
+            delegate?.updateCountries(fetchedCountries)
             return
         }
         
@@ -89,7 +100,7 @@ final class AirQualityPageViewModel {
                 let countries = countriesResponse.data.map { $0.country }
                 self.fetchedCountries = countries
                 DispatchQueue.main.async {
-                    self.viewController?.updateCountries(countries)
+                    self.delegate?.updateCountries(countries)
                 }
             case .failure(let error):
                 self.handleError(with: error.localizedDescription)
@@ -120,12 +131,11 @@ final class AirQualityPageViewModel {
             case .success(let statesResponse):
                 let states = statesResponse.data.map { $0.state }
                 DispatchQueue.main.async {
-                    self.viewController?.updateStates(states)
+                    self.delegate?.updateStates(states)
                 }
             case .failure(let error):
                 self.handleError(with: error.localizedDescription)
             }
-            
         }
     }
     
@@ -152,14 +162,12 @@ final class AirQualityPageViewModel {
             switch result {
             case .success(let citiesResponse):
                 let cities = citiesResponse.data.map { $0.city }
-//                self.fetchedCountries = countries
                 DispatchQueue.main.async {
-                    self.viewController?.updateCities(cities)
+                    self.delegate?.updateCities(cities)
                 }
             case .failure(let error):
                 self.handleError(with: error.localizedDescription)
             }
-            
         }
     }
 }

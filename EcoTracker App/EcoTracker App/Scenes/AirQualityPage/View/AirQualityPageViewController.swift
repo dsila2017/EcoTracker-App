@@ -9,7 +9,7 @@ import Kingfisher
 import UIKit
 import MapKit
 
-class AirQualityPageViewController: UIViewController {
+final class AirQualityPageViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -26,54 +26,35 @@ class AirQualityPageViewController: UIViewController {
     }()
     
     private lazy var cityTextField: UITextField = {
-        let textField = UITextField()
+        let textField = EcoTextField()
         textField.placeholder = "Choose City"
-        textField.borderStyle = .roundedRect
         textField.delegate = self
-        textField.backgroundColor = .darkGray
-//        textField.tintColor = .white
-        textField.textColor = .white
         return textField
     }()
     
     private lazy var stateTextField: UITextField = {
-        let textField = UITextField()
+        let textField = EcoTextField()
         textField.placeholder = "Choose State"
-        textField.borderStyle = .roundedRect
         textField.delegate = self
-        textField.backgroundColor = .darkGray
-//        textField.tintColor = .white
-        textField.textColor = .white
         return textField
     }()
     
     private lazy var countryTextField: UITextField = {
-        let textField = UITextField()
+        let textField = EcoTextField()
         textField.placeholder = "Choose Country"
-        textField.borderStyle = .roundedRect
         textField.delegate = self
-        textField.backgroundColor = .darkGray
-//        textField.tintColor = .white
-        textField.textColor = .white
-//        textField.addGestureRecognizer(
-//            UITapGestureRecognizer(
-//                target: self,
-//                action: #selector(countryTextFieldDidTap)
-//            )
-//        )
-        
         return textField
     }()
     
-//    @objc private func countryTextFieldDidTap() {
-//        viewModel.fetchCountries()
-//    }
-    
-    
     private lazy var fetchDataButton: UIButton = {
-        let button = UIButton(configuration: .filled())
+        let button = EcoButton()
         button.setTitle("Fetch Data", for: .normal)
-        button.addTarget(self, action: #selector(fetchDataButtonTapped), for: .touchUpInside)
+        button.addAction(
+            UIAction(handler: { [weak self] _ in
+                self?.fetchDataButtonTapped()
+            }),
+            for: .touchUpInside
+        )
         return button
     }()
     
@@ -93,7 +74,8 @@ class AirQualityPageViewController: UIViewController {
     
     private let imageView = UIImageView()
     
-    private lazy var viewModel = AirQualityPageViewModel(viewController: self)
+    // MARK: - Properties
+    private lazy var viewModel = AirQualityPageViewModel(delegate: self)
     
     private var selectedCountry: String?
     private var selectedState: String?
@@ -120,8 +102,6 @@ class AirQualityPageViewController: UIViewController {
         mainStackView.addArrangedSubview(imageView)
         mainStackView.addArrangedSubview(airQualityLabel)
         
-        
-        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -138,8 +118,7 @@ class AirQualityPageViewController: UIViewController {
         ])
     }
     
-    
-    @objc private func fetchDataButtonTapped() {
+    private func fetchDataButtonTapped() {
         guard let city = cityTextField.text, !city.isEmpty,
               let state = stateTextField.text, !state.isEmpty,
               let country = countryTextField.text, !country.isEmpty
@@ -150,6 +129,16 @@ class AirQualityPageViewController: UIViewController {
         
         viewModel.fetchCityData(for: city, state: state, country: country)
     }
+    
+    private func showAlert(title: String, message: String) {
+        let viewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        viewController.addAction(UIAlertAction(title: "Okay", style: .default))
+        present(viewController, animated: true)
+    }
+}
+
+// MARK: - AirQualityPageViewModelDelegate
+extension AirQualityPageViewController: AirQualityPageViewModelDelegate {
     
     func updateCountries(_ countries: [String]) {
         let viewController = PickerViewController(countries, for: .country)
@@ -185,7 +174,6 @@ class AirQualityPageViewController: UIViewController {
             }
         }
     }
-
     
     func showModel(_ model: AirVisualResponse) {
         DispatchQueue.main.async { [weak self] in
@@ -220,12 +208,6 @@ class AirQualityPageViewController: UIViewController {
     
     func handleError(with message: String) {
         showAlert(title: "Error", message: message)
-    }
-    
-    private func showAlert(title: String, message: String) {
-        let viewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        viewController.addAction(UIAlertAction(title: "Okay", style: .default))
-        present(viewController, animated: true)
     }
 }
 

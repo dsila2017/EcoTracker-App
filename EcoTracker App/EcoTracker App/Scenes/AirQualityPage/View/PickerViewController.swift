@@ -28,25 +28,24 @@ class PickerViewController: UIViewController {
     }()
     
     private lazy var button: UIButton = {
-        let button = UIButton(configuration: .filled())
+        let button = EcoButton()
         button.setTitle("Choose", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
+        button.addOnTouchUpInsideAction(buttonDidTap)
         return button
     }()
     
+    // MARK: - Properties
     weak var delegate: PickerDelegate?
     
     private var selectedItem: String
     
-    @objc private func buttonDidTap() {
+    private func buttonDidTap() {
         delegate?.didSelect(to: selectedItem, for: pickerType)
         dismiss(animated: true)
     }
     
     private let items: [String]
-    
-
     
     private let pickerType: PickerType
     
@@ -66,6 +65,7 @@ class PickerViewController: UIViewController {
         setupUI()
     }
     
+    // MARK: - Setup
     private func setupUI() {
         view.backgroundColor = .background
         
