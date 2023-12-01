@@ -43,7 +43,7 @@ final class SpeciePageViewController: UIViewController {
         
         setupUI()
     }
-
+    
     //MARK: - Private Methods
     
     private func setupUI() {
@@ -67,10 +67,24 @@ final class SpeciePageViewController: UIViewController {
         ])
     }
     
+    private func shakeTextField(textField: UITextField) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.05
+        animation.repeatCount = 5
+        animation.autoreverses = true
+
+        let fromPoint = CGPoint(x: textField.center.x - 5, y: textField.center.y)
+        let toPoint = CGPoint(x: textField.center.x + 5, y: textField.center.y)
+        animation.fromValue = NSValue(cgPoint: fromPoint)
+        animation.toValue = NSValue(cgPoint: toPoint)
+
+        textField.layer.add(animation, forKey: "position")
+    }
+    
     private func addActionForButton() {
         fetchButton.addAction(UIAction(handler: { [weak self] _ in
             guard let cityName = self?.cityNameTextField.text else {
-                return 
+                return
             }
             self?.viewModel.buttonTapped(for: cityName)
         }), for: .touchUpInside)
@@ -86,6 +100,9 @@ extension SpeciePageViewController: SpeciePageViewModelDelegate {
     }
     
     func showError(_ error: Error) {
+        DispatchQueue.main.async{
+            self.shakeTextField(textField: self.cityNameTextField)
+        }
         print(error)
     }
 }

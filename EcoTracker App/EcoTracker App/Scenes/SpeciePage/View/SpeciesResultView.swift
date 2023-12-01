@@ -8,7 +8,7 @@
 import UIKit
 
 final class SpeciesResultView: UIViewController {
-    var city: City?
+    private var city: City?
     
     private var tableView: UITableView = {
         let tableView = UITableView()
@@ -57,7 +57,7 @@ final class SpeciesResultView: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
-
+    
 }
 
 //MARK: - TableView DataSource

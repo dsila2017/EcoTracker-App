@@ -7,36 +7,20 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8E48F68E-284A-4D65-8A0C-88568C8AF7D3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EcoTracker App/Scenes/SpeciePage/View/SpeciesResultView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "speciesFetched(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "869FEB59-1AD0-4BAB-A545-7F57BCBA07E8"
-            shouldBeEnabled = "Yes"
+            uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcoTracker App/Scenes/SpeciePage/View/SpeciePageView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "addActionForButton()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "869FEB59-1AD0-4BAB-A545-7F57BCBA07E8 - 3fea899dd40772bf"
+                  uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF - 3fea899dd40772bf"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -51,7 +35,7 @@
                   offsetFromSymbolStart = "29">
                </Location>
                <Location
-                  uuid = "869FEB59-1AD0-4BAB-A545-7F57BCBA07E8 - aee923768a03e33b"
+                  uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF - aee923768a03e33b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -63,6 +47,36 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
                   endingLineNumber = "71"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF - 3fea899dd40770e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoTracker_App.SpeciePageViewController.addActionForButton() -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikarazmadze/Desktop/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/SpeciePage/View/SpeciePageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF - aee923768a03e16d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAction) -&gt; () in EcoTracker_App.SpeciePageViewController.addActionForButton() -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikarazmadze/Desktop/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/SpeciePage/View/SpeciePageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
                   offsetFromSymbolStart = "81">
                </Location>
             </Locations>
@@ -71,32 +85,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5EAD82B9-B3F1-48F9-9AC8-0B3ACBBDC3DC"
-            shouldBeEnabled = "Yes"
+            uuid = "7761AC9A-4860-4D8F-957F-F09EF6FF0A10"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EcoTracker App/Scenes/SpeciePage/View/SpeciesResultView.swift"
+            filePath = "EcoTracker App/Scenes/SpeciePage/View/SpeciePageView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "addActionForButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9F7B78A2-F2FF-4231-B05B-C218065C7DDF"
-            shouldBeEnabled = "Yes"
+            uuid = "ED51C261-B002-4A8C-A2C1-9451B0FC206E"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EcoTracker App/Scenes/SpeciePage/View/SpeciesResultView.swift"
+            filePath = "EcoTracker App/Scenes/SpeciePage/View/SpeciePageView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "showError(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
