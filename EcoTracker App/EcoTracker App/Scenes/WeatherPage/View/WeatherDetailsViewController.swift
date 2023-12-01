@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherDetailsViewController: UIViewController {
+final class WeatherDetailsViewController: UIViewController {
     
     // MARK: - Properties
     private let mainStackView: UIStackView = {
@@ -24,8 +24,6 @@ class WeatherDetailsViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 16
-        stackView.clipsToBounds = true
-        stackView.layer.cornerRadius = 16
         return stackView
     }()
     
