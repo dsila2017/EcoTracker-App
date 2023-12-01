@@ -30,7 +30,6 @@ final class PickerViewController: UIViewController {
     private lazy var button: UIButton = {
         let button = EcoButton()
         button.setTitle("Choose", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addOnTouchUpInsideAction(buttonDidTap)
         return button
     }()

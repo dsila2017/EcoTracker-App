@@ -9,9 +9,13 @@ import UIKit
 
 final class EcoButton: UIButton {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    init() {
+        super.init(frame: .zero)
         setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func addOnTouchUpInsideAction(_ handler: @escaping () -> Void) {
@@ -28,5 +32,7 @@ final class EcoButton: UIButton {
         layer.cornerRadius = 10
         clipsToBounds = true
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        
+        heightAnchor.constraint(equalToConstant: 44).isActive = true
     }
 }

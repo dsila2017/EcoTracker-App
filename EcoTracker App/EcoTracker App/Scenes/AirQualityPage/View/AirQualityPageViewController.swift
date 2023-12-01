@@ -27,21 +27,21 @@ final class AirQualityPageViewController: UIViewController {
     
     private lazy var cityTextField: UITextField = {
         let textField = EcoTextField()
-        textField.placeholder = "Choose City"
+        textField.setPlaceholder("Choose City")
         textField.delegate = self
         return textField
     }()
     
     private lazy var stateTextField: UITextField = {
         let textField = EcoTextField()
-        textField.placeholder = "Choose State"
+        textField.setPlaceholder("Choose State")
         textField.delegate = self
         return textField
     }()
     
     private lazy var countryTextField: UITextField = {
         let textField = EcoTextField()
-        textField.placeholder = "Choose Country"
+        textField.setPlaceholder("Choose Country")
         textField.delegate = self
         return textField
     }()
@@ -49,12 +49,7 @@ final class AirQualityPageViewController: UIViewController {
     private lazy var fetchDataButton: UIButton = {
         let button = EcoButton()
         button.setTitle("Fetch Data", for: .normal)
-        button.addAction(
-            UIAction(handler: { [weak self] _ in
-                self?.fetchDataButtonTapped()
-            }),
-            for: .touchUpInside
-        )
+        button.addOnTouchUpInsideAction(fetchDataButtonTapped)
         return button
     }()
     
@@ -62,6 +57,7 @@ final class AirQualityPageViewController: UIViewController {
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.layer.cornerRadius = 12
+        mapView.isHidden = true
         return mapView
     }()
     
@@ -72,7 +68,13 @@ final class AirQualityPageViewController: UIViewController {
         return label
     }()
     
-    private let imageView = UIImageView()
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        return imageView
+    }()
     
     // MARK: - Properties
     private lazy var viewModel = AirQualityPageViewModel(delegate: self)
@@ -98,9 +100,12 @@ final class AirQualityPageViewController: UIViewController {
         
         mainStackView.addArrangedSubview(fetchDataButton)
         mainStackView.addArrangedSubview(mapView)
+            
         
-        mainStackView.addArrangedSubview(imageView)
-        mainStackView.addArrangedSubview(airQualityLabel)
+        let stackView = UIStackView(arrangedSubviews: [airQualityLabel, imageView])
+        stackView.spacing = 16
+        stackView.alignment = .center
+        mainStackView.addArrangedSubview(stackView)
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -159,18 +164,14 @@ extension AirQualityPageViewController: AirQualityPageViewModelDelegate {
     }
     
     func updateImage(url urlString: String) {
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        let resource = ImageResource(downloadURL: url)
-
-        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
-            switch result {
-            case .success(let value):
-                let image = value.image.withRenderingMode(.alwaysOriginal)
-                self.imageView.image = image
-            case .failure(let error):
-                self.handleError(with: "Error: \(error)")
+        guard let url = URL(string: urlString) else { return }
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.imageView.image = image
+                    }
+                }
             }
         }
     }
@@ -179,17 +180,20 @@ extension AirQualityPageViewController: AirQualityPageViewModelDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             
+            mapView.isHidden = false
+            
             self.cityTextField.text = model.data.city
             self.stateTextField.text = model.data.state
             self.countryTextField.text = model.data.country
             
-            let airQualityText = """
-      Weather: \(model.data.current.weather.ic)
-      Temperature: \(model.data.current.weather.tp) °C
-      Humidity: \(model.data.current.weather.hu)%
-      Wind Speed: \(model.data.current.weather.ws) m/s
-      Air Quality Index (US): \(model.data.current.pollution.aqius)
-      Air Quality Index (China): \(model.data.current.pollution.aqicn)
+            let airQualityText = 
+"""
+Weather: \(model.data.current.weather.ic)
+Temperature: \(model.data.current.weather.tp) °C
+Humidity: \(model.data.current.weather.hu)%
+Wind Speed: \(model.data.current.weather.ws) m/s
+Air Quality Index (US): \(model.data.current.pollution.aqius)
+Air Quality Index (China): \(model.data.current.pollution.aqicn)
 """
             self.airQualityLabel.text = airQualityText
             
