@@ -52,7 +52,7 @@ final class PopulationPageViewController: UIViewController {
     private let bottomBottomHalfView = UIView()
     
     var pickerData = CountriesModel(countries: [])
-    var model = PopulationPageViewModel()
+    var model: PopulationPageViewModelProtocol = PopulationPageViewModel()
     
     var country = "Afghanistan"
     
