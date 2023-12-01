@@ -158,7 +158,6 @@
 			children = (
 				63DE5EA02B1777910050A54E /* Model */,
 				63DE5E9F2B1777850050A54E /* View */,
-				150CDE942B19A87500D32F7B /* Cell */,
 				63DE5EA12B1777990050A54E /* ViewModel */,
 			);
 			path = SpeciePage;
@@ -237,6 +236,7 @@
 			children = (
 				63DE5E7C2B17760E0050A54E /* SpeciePageView.swift */,
 				15A26B3D2B18B9FD00DF08E1 /* SpeciesResultView.swift */,
+				150CDE942B19A87500D32F7B /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
