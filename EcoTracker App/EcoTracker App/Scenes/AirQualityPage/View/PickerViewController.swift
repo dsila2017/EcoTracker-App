@@ -17,7 +17,7 @@ enum PickerType {
     case city
 }
 
-class PickerViewController: UIViewController {
+final class PickerViewController: UIViewController {
     private lazy var pickerView: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.translatesAutoresizingMaskIntoConstraints = false
