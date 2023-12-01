@@ -82,6 +82,7 @@ class SolarResourcePageViewController: UIViewController {
     
     @objc private func searchButtonTapped() {
         guard var cityName = searchField.text else { return }
+        
         cityName = cityName.replacingOccurrences(of: " ", with: "%20")
         viewModel.viewDidLoad(address: cityName)
     }

@@ -29,6 +29,7 @@
 		63DE5E9B2B1777580050A54E /* PopulationPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5E9A2B1777580050A54E /* PopulationPageViewModel.swift */; };
 		63E8D78C2B179B5A00E60F60 /* NetworkManagerPro in Frameworks */ = {isa = PBXBuildFile; productRef = 63E8D78B2B179B5A00E60F60 /* NetworkManagerPro */; };
 		63E8D78E2B179C0E00E60F60 /* UIColor Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8D78D2B179C0E00E60F60 /* UIColor Extension.swift */; };
+		CC5145BE2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5145BD2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		63DE5E982B1777510050A54E /* PopulationPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationPageModel.swift; sourceTree = "<group>"; };
 		63DE5E9A2B1777580050A54E /* PopulationPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationPageViewModel.swift; sourceTree = "<group>"; };
 		63E8D78D2B179C0E00E60F60 /* UIColor Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Extension.swift"; sourceTree = "<group>"; };
+		CC5145BD2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarResourcesAverageInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				63DE5E7F2B17765D0050A54E /* SolarResourcePageView.swift */,
+				CC5145BD2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5145BE2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift in Sources */,
 				63DE5E672B1766F80050A54E /* AirQualityPageView.swift in Sources */,
 				63DE5E882B1776D10050A54E /* AirQualityPageViewModel.swift in Sources */,
 				63DE5E792B1775D50050A54E /* WeatherPageView.swift in Sources */,
@@ -543,6 +547,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,6 +575,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

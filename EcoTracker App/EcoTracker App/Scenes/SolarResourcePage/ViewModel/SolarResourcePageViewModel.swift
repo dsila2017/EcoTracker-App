@@ -22,6 +22,7 @@ final class SolarResourcePageViewModel {
     }
     
     func viewDidLoad(address: String) {
+        
         getCoordinatesByAddress(address)
     }
     
