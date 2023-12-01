@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150CDE962B19A89500D32F7B /* SpeciesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150CDE952B19A89500D32F7B /* SpeciesTableViewCell.swift */; };
+		15A26B3E2B18B9FD00DF08E1 /* SpeciesResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A26B3D2B18B9FD00DF08E1 /* SpeciesResultView.swift */; };
+		15A26B402B18C69500DF08E1 /* SpeciesResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A26B3F2B18C69400DF08E1 /* SpeciesResultsViewModel.swift */; };
 		32E1062E2B1A0EF000B63A34 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E1062D2B1A0EF000B63A34 /* WeatherDetailsViewController.swift */; };
 		632AF25C2B17BDFD0006F5E0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 632AF25B2B17BDFD0006F5E0 /* Kingfisher */; };
 		632AF2722B18D9B10006F5E0 /* CountriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2712B18D9B10006F5E0 /* CountriesModel.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150CDE952B19A89500D32F7B /* SpeciesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesTableViewCell.swift; sourceTree = "<group>"; };
+		15A26B3D2B18B9FD00DF08E1 /* SpeciesResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesResultView.swift; sourceTree = "<group>"; };
+		15A26B3F2B18C69400DF08E1 /* SpeciesResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesResultsViewModel.swift; sourceTree = "<group>"; };
 		32E1062D2B1A0EF000B63A34 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		632AF2712B18D9B10006F5E0 /* CountriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModel.swift; sourceTree = "<group>"; };
 		632AF2732B18DB490006F5E0 /* PopUpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpPageView.swift; sourceTree = "<group>"; };
@@ -91,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150CDE942B19A87500D32F7B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				150CDE952B19A89500D32F7B /* SpeciesTableViewCell.swift */,
+			);
+			path = Cell;
+            sourceTree = "<group>";
+        };
 		632AF2752B18DB4F0006F5E0 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				63DE5E7C2B17760E0050A54E /* SpeciePageView.swift */,
+				15A26B3D2B18B9FD00DF08E1 /* SpeciesResultView.swift */,
+				150CDE942B19A87500D32F7B /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				63DE5E922B17773A0050A54E /* SpeciePageViewModel.swift */,
+				15A26B3F2B18C69400DF08E1 /* SpeciesResultsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -452,6 +469,7 @@
 				CC5145BE2B19298B00FC85DA /* SolarResourcesAverageInfoViewController.swift in Sources */,
 				63DE5E672B1766F80050A54E /* AirQualityPageView.swift in Sources */,
 				63DE5E882B1776D10050A54E /* AirQualityPageViewModel.swift in Sources */,
+				15A26B402B18C69500DF08E1 /* SpeciesResultsViewModel.swift in Sources */,
 				D93F1E772B1A4F8F001952B5 /* EcoButton.swift in Sources */,
 				63DE5E792B1775D50050A54E /* WeatherPageView.swift in Sources */,
 				63DE5E912B1777340050A54E /* SpeciePageModel.swift in Sources */,
@@ -472,8 +490,10 @@
 				63DE5E632B1766F80050A54E /* AppDelegate.swift in Sources */,
 				D93F1E732B1930AC001952B5 /* StatesModels.swift in Sources */,
 				63DE5E8D2B1777250050A54E /* WeatherPageModel.swift in Sources */,
+				150CDE962B19A89500D32F7B /* SpeciesTableViewCell.swift in Sources */,
 				63DE5E972B17774C0050A54E /* SolarResourcePageViewModel.swift in Sources */,
 				63DE5E7D2B17760E0050A54E /* SpeciePageView.swift in Sources */,
+				15A26B3E2B18B9FD00DF08E1 /* SpeciesResultView.swift in Sources */,
 				63DE5E652B1766F80050A54E /* SceneDelegate.swift in Sources */,
 				D93F1E6F2B191E2D001952B5 /* CountryModels.swift in Sources */,
 				63DE5E832B17767C0050A54E /* PopulationPageView.swift in Sources */,

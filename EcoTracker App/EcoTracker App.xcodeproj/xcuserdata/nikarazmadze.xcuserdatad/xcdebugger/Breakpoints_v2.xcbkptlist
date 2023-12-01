@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FED24D5D-7C89-44A2-9C88-CD2F21D6E94B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoTracker App/Scenes/SpeciePage/View/SpeciePageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "addActionForButton()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF - 3fea899dd40772bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoTracker_App.SpeciePageViewController.addActionForButton() -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikarazmadze/Desktop/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/SpeciePage/View/SpeciePageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF - aee923768a03e33b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAction) -&gt; () in EcoTracker_App.SpeciePageViewController.addActionForButton() -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikarazmadze/Desktop/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/SpeciePage/View/SpeciePageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF - 3fea899dd40770e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoTracker_App.SpeciePageViewController.addActionForButton() -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikarazmadze/Desktop/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/SpeciePage/View/SpeciePageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  uuid = "A2DBE748-C5CF-4B1E-9B24-098F367D68FF - aee923768a03e16d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAction) -&gt; () in EcoTracker_App.SpeciePageViewController.addActionForButton() -&gt; ()"
+                  moduleName = "EcoTracker App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikarazmadze/Desktop/EcoTracker-App/EcoTracker%20App/EcoTracker%20App/Scenes/SpeciePage/View/SpeciePageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "81">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7761AC9A-4860-4D8F-957F-F09EF6FF0A10"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoTracker App/Scenes/SpeciePage/View/SpeciePageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "addActionForButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED51C261-B002-4A8C-A2C1-9451B0FC206E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoTracker App/Scenes/SpeciePage/View/SpeciePageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "showError(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
