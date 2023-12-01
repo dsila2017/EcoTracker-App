@@ -23,7 +23,7 @@ final class PopulationPageViewController: UIViewController {
         return stackView
     }()
     
-    private let mainPicker: UIPickerView = {
+    let mainPicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
         return picker
@@ -51,12 +51,20 @@ final class PopulationPageViewController: UIViewController {
     private let bottomTopHalfView = UIView()
     private let bottomBottomHalfView = UIView()
     
-    var pickerData = ["Georgia","Belgium","Argentina","Germany","Other"]
+    var pickerData = CountriesModel(countries: [])
+    
+    var model = PopulationPageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupView()
+        setupDelegate()
+        model.viewDidLoad(countries: pickerData)
+    }
+    
+    private func setupDelegate() {
+        model.delegate = self
     }
     
     private func setupView() {
@@ -100,14 +108,12 @@ extension PopulationPageViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        pickerData.count
+        pickerData.countries.count
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        NSAttributedString(string: pickerData[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        return NSAttributedString(string: pickerData.countries[row] ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
-    
-    
 }
 
 // Don't Need Yet

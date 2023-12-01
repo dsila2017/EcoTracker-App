@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CountriesModel: Codable {
-    let countries: [String]
+struct CountriesModel: Decodable {
+    let countries: [String?]
 }

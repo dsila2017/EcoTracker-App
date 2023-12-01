@@ -30,7 +30,7 @@ final class PopUpPageView: UIViewController {
         return stackView
     }()
     
-    private let countryLabel:UILabel = {
+    private var countryLabel:UILabel = {
         let label = UILabel()
         label.text = "Country"
         label.font = .systemFont(ofSize: 24, weight: .bold)
@@ -39,7 +39,7 @@ final class PopUpPageView: UIViewController {
         return label
     }()
     
-    private let todayLabel:UILabel = {
+    private var todayLabel:UILabel = {
         let label = UILabel()
         label.text = "Today's Population:"
         label.font = .systemFont(ofSize: 24, weight: .bold)
@@ -48,7 +48,7 @@ final class PopUpPageView: UIViewController {
         return label
     }()
     
-    private let tomorrowLabel:UILabel = {
+    private var tomorrowLabel:UILabel = {
         let label = UILabel()
         label.text = "Tomorrow's Population:"
         label.font = .systemFont(ofSize: 24, weight: .bold)
@@ -57,7 +57,7 @@ final class PopUpPageView: UIViewController {
         return label
     }()
     
-    private let todayNumberLabel:UILabel = {
+    private var todayNumberLabel:UILabel = {
         let label = UILabel()
         label.text = "140000"
         label.font = .systemFont(ofSize: 24, weight: .bold)
@@ -66,7 +66,7 @@ final class PopUpPageView: UIViewController {
         return label
     }()
     
-    private let tomorrowNumberLabel:UILabel = {
+    private var tomorrowNumberLabel:UILabel = {
         let label = UILabel()
         label.text = "170000"
         label.font = .systemFont(ofSize: 24, weight: .bold)
@@ -75,7 +75,7 @@ final class PopUpPageView: UIViewController {
         return label
     }()
     
-    private let todayDateLabel:UILabel = {
+    private var todayDateLabel:UILabel = {
         let label = UILabel()
         label.text = "30 Nov 2023"
         label.font = .systemFont(ofSize: 24, weight: .bold)
@@ -84,7 +84,7 @@ final class PopUpPageView: UIViewController {
         return label
     }()
     
-    private let tomorrowDateLabel:UILabel = {
+    private var tomorrowDateLabel:UILabel = {
         let label = UILabel()
         label.text = "1 Dec 2023"
         label.font = .systemFont(ofSize: 24, weight: .bold)
@@ -93,16 +93,25 @@ final class PopUpPageView: UIViewController {
         return label
     }()
     
+    var population = PopulationModel(totalPopulation: [])
+    var model = PopUpPageViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = CustomColors.background
         setupMainView()
+        model.viewDidLoad(population: population)
+    }
+    
+    private func setupDelegate() {
+        model.delegate = self
     }
     
     private func setupMainView() {
         view.addSubview(mainStackView)
         setupConstraints()
+        setupDelegate()
     }
     
     private func setupConstraints() {
@@ -121,6 +130,13 @@ final class PopUpPageView: UIViewController {
             
         ])
         
+    }
+    
+    func updateUI(updateModel: PopulationModel) {
+        self.todayDateLabel.text = updateModel.totalPopulation[0].date
+        self.todayNumberLabel.text = String(updateModel.totalPopulation[0].population)
+        self.tomorrowDateLabel.text = updateModel.totalPopulation[1].date
+        self.tomorrowNumberLabel.text = String(updateModel.totalPopulation[1].population )
     }
 
 
