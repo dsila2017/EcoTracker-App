@@ -20,9 +20,6 @@ final class WeatherPageViewModel {
     private let baseURL = "https://api.openweathermap.org/data/2.5/forecast?"
     private let apiKey = "e77aed597a0d0d416f5a894cc977d3b2"
     
-    // 41.6509502
-    // 41.6360085
-    
     init(networkManager: Network) {
         self.networkManager = networkManager
     }
